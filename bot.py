@@ -78,7 +78,7 @@ ANIME_RASMLARI = {
     "gurur": "AgACAgIAAxkBAAIBL2opR5wJs2jc_3Yqbk_BKgNsdIQKAAKZGWsbuF5ISdRRG31BlP2iAQADAgADeAADOwQ", 
     "takabo": "AgACAgIAAxkBAAIBM2opSPI3i1tkqc4zwdtVeqfgyQfnAALrGWsbuF5QSRUdqqyLISuYAQADAgADeQADOwQ",
     "hyouka": "AgACAgIAAxkBAAIB0Gop7u32AAHByz_lO6Csc58pLwO82gAC3xdrG7heUEnbREf6vNq0rwEAAwIAA3kAAzsE", 
-    "roker": "AgACAgIAAxkBAAIB92oqUG6Xf8F9Z6vW1AABl7C_vYAAAw0AAgdn8EviJa9pTst3bzsE"
+    "roker": "AgACAgIAAxkBAAICEmoqU1YFp0Ch1NxPCg8E4DtN6NvQAALcG2sbeHhQSaLXB6zHIFhpAQADAgADeQADOwQ"
 }
 
 @bot.message_handler(content_types=['video', 'photo', 'document'])
