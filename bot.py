@@ -1,5 +1,8 @@
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
+import os
+from threading import Thread
+from flask import Flask
 
 TOKEN = "8424454632:AAFUdy9bmZetNjq5DfS-wxiirZZhrXCrs4s"
 
@@ -167,5 +170,23 @@ def handle_start(message):
     else:
         bot.send_message(message.chat.id, "Afsuski, bu anime bazamizda topilmadi. ❌")
 
+# Render portni tekshirishi uchun kichik Flask veb-server yaratamiz
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
+
+# Veb-serverni alohida oqimda (thread) ishga tushiramiz
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
 if __name__ == "__main__":
-    bot.infinity_polling()
+    keep_alive()  # Kichik veb-server ishga tushadi
+    print("Bot muvaffaqiyatli yoqildi!")
+    bot.infinity_polling(none_stop=True, timeout=60, long_polling_timeout=30)
